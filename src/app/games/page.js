@@ -10,8 +10,8 @@ export default async function Page() {
   return (
     <div className="m-2">
       {games.rows.map((game) => (
-        <div key={game.id}>
-          <h1>{game.game_title}</h1>
+        <div key={game.id} className="m-2 p-2 border-2">
+          <h1 className="text-3xl">{game.game_name}</h1>
           <p>{game.game_info}</p>
           <Image
             src={game.game_img}
