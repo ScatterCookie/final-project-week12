@@ -2,12 +2,13 @@ import Image from "next/image";
 import NavBar from "../components/NavBar";
 import NewReview from "../components/NewReview";
 import { db } from "../utils/db";
+import Link from "next/link";
 
 export default async function Page() {
   const games = await db.query("SELECT * FROM games");
   console.log(games);
   return (
-    <div>
+    <div className="m-2">
       {games.rows.map((game) => (
         <div key={game.id}>
           <h1>{game.game_title}</h1>
@@ -18,6 +19,9 @@ export default async function Page() {
             width={250}
             height={150}
           ></Image>
+          <Link href={`/games/${game.id}`} className="text-blue-500">
+            Read more
+          </Link>
         </div>
       ))}
     </div>
