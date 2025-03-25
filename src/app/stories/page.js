@@ -1,15 +1,19 @@
 import Link from "next/link";
 import { db } from "../utils/db";
 import EditStory from "../components/EditStories";
+import {auth, currentUser} from "@clerk/nextjs/server"
 
 export default async function Page() {
   const stories = await db.query("SELECT * FROM game_stories");
-  const storyId = stories.rows[0].id;
-  console.log(storyId);
+
+  await auth()
+  const user = await currentUser();
+
   async function renderStory(story) {
     const game = await db.query("SELECT * FROM games WHERE id = $1", [
       story.game_id,
     ]);
+    console.log(user.id)
     return (
       <div key={story.id}>
         <h2>{story.story_title}</h2>
@@ -21,12 +25,11 @@ export default async function Page() {
             {game.rows[0].game_name}
           </Link>
         </p>
-        <EditStory id={`${storyId}`} />
+        {story.clerk_id == user.id ? 
+        <EditStory id={`${story.id}`} /> : ""}
       </div>
     );
   }
-
-  console.log(stories.rows[0].id);
 
   return (
     <div>
