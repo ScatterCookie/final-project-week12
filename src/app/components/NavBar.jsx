@@ -4,7 +4,7 @@ import navcssStyles from "../css/navcss.module.css";
 export default function NavBar() {
   return (
     <nav>
-      <div className="flex-col">
+      <div className="flex gap-2">
         <Link href="/">Home</Link>
         <Link href="/games">Games</Link>
         <Link href="/stories">Stories</Link>
