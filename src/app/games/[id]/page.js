@@ -3,6 +3,7 @@ import NewReview from "@/app/components/NewReview";
 import NewStory from "@/app/components/NewStory";
 import { db } from "@/app/utils/db";
 import Image from "next/image";
+import EditButton from "@/app/components/Editgame";
 
 export default async function Page({ params }) {
   const id = await params;
@@ -25,6 +26,7 @@ export default async function Page({ params }) {
         height={150}
       ></Image>
       <p>{gameData.rows[0].game_info}</p>
+      <EditButton id={gameData.rows[0].id} />
 
       <NewReview id={id} />
       {reviews.rows.map((review) => (
