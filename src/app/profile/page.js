@@ -1,12 +1,16 @@
-import {auth, currentUser} from "@clerk/nextjs/server"
+import { auth, currentUser } from "@clerk/nextjs/server";
 import { db } from "../utils/db";
 import UserForm from "../components/UserForm";
 import Image from "next/image";
 
 export default async function Page() {
+  const { userId, redirectToSignIn } = await auth();
+  const user = await currentUser();
 
-    const {userId, redirectToSignIn} = await auth()
-
+  const userInfo = await db.query(
+    `SELECT * FROM user_info WHERE clerk_id = $1`,
+    [userId]
+  );
     const user = await currentUser();
     
     const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
