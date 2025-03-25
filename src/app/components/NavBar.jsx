@@ -1,14 +1,21 @@
-import Link from "next/link";
+import Link from "next/link"
+import Style from "./games/games-page.module.css"
 
 export default function NavBar() {
   return (
-    <nav>
-      <ul className="flex gap-2 top-1 absolute left-1 p-2">
-        <Link href="/">Home</Link>
-        <Link href="/games">Games</Link>
-        <Link href="/stories">Stories</Link>
-        <Link href="/profile">Profile</Link>
+    <div className={Styles.userSection}>
+      <h3>Hi, User </h3>
+      <ul className={Styles.navList}>
+        <li className={Styles.navItem}>Home</li>
+        <li className={Styles.navItem}>Games</li>
+        <li className={Styles.navItem}>Stories</li>
+        <li className={Styles.navItem}>Profile</li>
       </ul>
-    </nav>
+      <input 
+        type="text" 
+        placeholder="Search..." 
+        className={Styles.searchBar}
+      />
+    </div>
   );
 }

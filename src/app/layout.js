@@ -17,6 +17,7 @@ import Header from "./components/Header";
 import Image from "next/image";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
+import gamesPageStyles from "./games/games-page.module.css"
 
 
 const geistSans = Geist({

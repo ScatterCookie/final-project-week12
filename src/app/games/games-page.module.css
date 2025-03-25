@@ -1,0 +1,306 @@
+
+.container {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    min-height: 100vh;
+    background: linear-gradient(45deg, #0a0a0a 0%, #121212 100%);
+    color: #ffffff;
+    font-family: 'Inter', sans-serif;
+    position: relative;
+    overflow: hidden;
+}
+
+/*  Sidebar styles animation  */
+.sidebar {
+    padding: 2rem 1.5rem;
+    background: rgba(16, 16, 16, 0.95);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid #2a2a2a;
+    position: fixed;
+    width: 280px;
+    height: 100vh;
+    z-index: 100;
+    animation: sidebarEntrance 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes sidebarEntrance {
+    0% {
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.userSection {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 16px;
+    border: 1px solid #363636;
+    position: relative;
+    overflow: hidden;
+}
+
+.userSection::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, #6C40E6 0%, transparent 50%);
+    opacity: 0.1;
+    pointer-events: none;
+}
+
+.navList {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.navItem {
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 12px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.navItem:hover {
+    background: rgba(46, 46, 46, 0.4);
+    transform: translateX(8px);
+}
+
+.navItem::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #6C40E6;
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.navItem:hover::before {
+    transform: scaleY(1);
+}
+
+/* Main Content Styles */
+.mainContent {
+    padding: 3rem 4rem;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2.5rem;
+    animation: headerEntrance 0.8s ease both;
+}
+
+@keyframes headerEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.addButton {
+    background: linear-gradient(135deg, #6C40E6 0%, #8D6EFF 100%);
+    color: white;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(108, 64, 230, 0.3);
+}
+
+.addButton:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 25px rgba(108, 64, 230, 0.4);
+}
+
+/* animated game cards grid --- */
+.gamesGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.gameCard {
+    background: rgba(30, 30, 30, 0.6);
+    border-radius: 20px;
+    padding: 1.5rem;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border: 1px solid #363636;
+    position: relative;
+    overflow: hidden;
+    animation: cardEntrance 0.6s ease both;
+}
+
+@keyframes cardEntrance {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.9);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.gameCard:hover {
+    transform: translateY(-8px) scale(1.02);
+    border-color: #6C40E6;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+    z-index: 2;
+}
+
+.gameCard::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(45deg, #6C40E660 0%, transparent 50%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.gameCard:hover::before {
+    opacity: 1;
+}
+
+/* Image Container  */
+.imageContainer {
+    position: relative;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 1.5rem;
+    aspect-ratio: 16/9;
+}
+
+.gameImage {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.gameCard:hover .gameImage {
+    transform: scale(1.05);
+}
+
+/* Hot Games Badge  */
+.hotBadge {
+    background: linear-gradient(45deg, #FF4757 0%, #FF6B6B 100%);
+    color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    z-index: 2;
+    box-shadow: 0 4px 15px rgba(255, 71, 87, 0.3);
+}
+
+/* Interactive Links  */
+.readMore {
+    color: #8D6EFF;
+    text-decoration: none;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.readMore:hover {
+    color: #6C40E6;
+    gap: 1rem;
+}
+
+.readMore::after {
+    content: '→';
+    display: inline-block;
+    transition: transform 0.3s ease;
+}
+
+.readMore:hover::after {
+    transform: translateX(4px);
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 1024px) {
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        animation: none;
+        transform: translateX(0);
+    }
+
+    .mainContent {
+        padding: 2rem;
+    }
+
+    .gamesGrid {
+        grid-template-columns: 1fr;
+    }
+
+    .gameCard {
+        animation: mobileCardEntrance 0.6s ease both;
+    }
+
+    @keyframes mobileCardEntrance {
+        0% {
+            opacity: 0;
+            transform: translateX(-20px);
+        }
+
+        100% {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+}
+
+/* --- Staggered Animation Delays --- */
+.gameCard:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.gameCard:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.gameCard:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.gameCard:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+/* Add more nth-child rules as needed */
