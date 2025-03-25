@@ -13,10 +13,11 @@ import {
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
-import Header from "./components/Header";
+import Clerk from "./components/Clerk";
 import Image from "next/image";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
+import navcssStyles from "./css/navcss.module.css";
 
 
 const geistSans = Geist({
@@ -38,21 +39,11 @@ export default function RootLayout({ children }) {
   return (
     <ClerkProvider>
       <html lang="en">
-        <body
-          className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        >
-          <header className="flex justify-end items-center p-4 gap-4 h-16">
-            <SignedOut>
+        <body>
+          <header className={navcssStyles.navcss}>
             <NavBar />
-              <SignInButton />
-              <SignUpButton />
-            </SignedOut>
-            <SignedIn>
-              
-              <UserButton />
-            </SignedIn>
+            <Clerk />
           </header>
-          <nav> <NavBar />   </nav>
           <main className={mainStyles.main}>
             {children}
 
