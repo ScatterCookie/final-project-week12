@@ -1,22 +1,22 @@
 'use server'
 import { db } from "./db"
-import { redirect } from "next/navigation"
 import { revalidatePath } from "next/cache"
+import { redirect } from "next/navigation"
 
 export async function editGame(id){
     await db.query(`SELECT * FROM games`)
-    revalidatePath(`/games/edit/${id}`)
-    redirect(`/games`)
+    revalidatePath(`/games/edit/`)
+    redirect(`/games/edit/${id}`)
 }
 
 export async function editStory(id){
     await db.query(`SELECT * FROM games`)
-    revalidatePath(`/games/edit/${id}`)
-    redirect(`/games`)
+    revalidatePath(`/games/edit/`)
+    redirect(`/games/edit/${id}`)
 }
 
 export async function editReview(id){
     await db.query(`SELECT * FROM games`)
-    revalidatePath(`/games/edit/${id}`)
-    redirect(`/games`)
+    revalidatePath(`/games/edit/`)
+    redirect(`/games/edit/${id}`)
 }
