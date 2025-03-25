@@ -14,7 +14,10 @@ export default async function Page() {
         <p>{story.story_cont}</p>
         <p>
           This story is from:
-          <Link href={`/games/${story.game_id}`}>{game.rows[0].game_name}</Link>
+          <Link href={`/games/${story.game_id}`}>
+            {" "}
+            {game.rows[0].game_name}
+          </Link>
         </p>
       </div>
     );
@@ -22,7 +25,6 @@ export default async function Page() {
 
   return (
     <div>
-      <NavBar />
       <h1>Stories Page</h1>
       {stories.rows.map(renderStory)}
     </div>
