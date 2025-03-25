@@ -29,7 +29,7 @@ export default async function EditBio({params}) {
             <label htmlFor="story_title">Edit Existing Title</label>
             <input id="story_title" name="story_title" placeholder="What do you call this?" defaultValue={content.story_title}></input>
 
-            <label htmlFor="story_cont">Edit Existing Title</label>
+            <label htmlFor="story_cont">Edit Story</label>
             <input id="story_cont" name="story_cont" placeholder="What's on your mind?" defaultValue={content.story_cont}></input>
             <button type="submit">Confirm Changes!</button>
         </form>
