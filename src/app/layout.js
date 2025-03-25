@@ -8,7 +8,7 @@ import {
   ClerkLoaded,
   ClerkLoading,
   SignIn,
-  SignUp
+  SignUp,
 } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
@@ -18,7 +18,6 @@ import Image from "next/image";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
 import navcssStyles from "./css/navcss.module.css";
-
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -41,15 +40,12 @@ export default function RootLayout({ children }) {
       <html lang="en">
         <body>
           <header className={navcssStyles.navcss}>
-            <NavBar />
-            <Clerk />
+            <div className="flex gap-3 justify-between">
+              <NavBar />
+              <Clerk />
+            </div>
           </header>
-          <main className={mainStyles.main}>
-            {children}
-
-
-          </main>
-          
+          <main className={mainStyles.main}>{children}</main>
         </body>
       </html>
     </ClerkProvider>
