@@ -13,6 +13,14 @@ export default async function Page() {
     if(!user) return redirectToSignIn();
 
     const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
+
+    if(userInfo.rowCount ==0){
+      return(
+          <div>
+              <UserForm />
+          </div>
+      )
+  }
     
     const clerkId = userInfo.rows[0].clerk_id
     
