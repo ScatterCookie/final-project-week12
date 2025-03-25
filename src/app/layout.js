@@ -5,10 +5,19 @@ import {
   SignedIn,
   SignedOut,
   UserButton,
+  ClerkLoaded,
+  ClerkLoading,
+  SignIn,
+  SignUp
 } from "@clerk/nextjs";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
+import Header from "./components/Header";
+import Image from "next/image";
+import Link from "next/link";
+import mainStyles from "./css/main.module.css";
+
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -39,11 +48,17 @@ export default function RootLayout({ children }) {
               <SignUpButton />
             </SignedOut>
             <SignedIn>
-              <NavBar />
+              
               <UserButton />
             </SignedIn>
           </header>
-          {children}
+          <nav> <NavBar />   </nav>
+          <main className={mainStyles.main}>
+            {children}
+
+
+          </main>
+          
         </body>
       </html>
     </ClerkProvider>
