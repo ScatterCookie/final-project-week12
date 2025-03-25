@@ -1,9 +1,11 @@
 import Link from "next/link";
-import NavBar from "../components/NavBar";
 import { db } from "../utils/db";
+import EditStory from "../components/EditStories";
 
 export default async function Page() {
   const stories = await db.query("SELECT * FROM game_stories");
+  const storyId = stories.rows[0].id
+  console.log(storyId)
   async function renderStory(story) {
     const game = await db.query("SELECT * FROM games WHERE id = $1", [
       story.game_id,
@@ -23,10 +25,15 @@ export default async function Page() {
     );
   }
 
+  console.log(stories.rows[0].id)
+
   return (
     <div>
       <h1>Stories Page</h1>
       {stories.rows.map(renderStory)}
+      <div>
+        <EditStory id={`${storyId}`} />
+      </div>
     </div>
   );
 }

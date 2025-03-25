@@ -10,7 +10,7 @@ export async function editGame(id){
 }
 
 export async function editStory(id){
-    await db.query(`SELECT * FROM games`)
+    await db.query(`SELECT * FROM game_stories`)
     revalidatePath(`/games/edit/`)
     redirect(`/games/edit/${id}`)
 }
