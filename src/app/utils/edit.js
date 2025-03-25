@@ -20,3 +20,9 @@ export async function editReview(id){
     revalidatePath(`/games/edit/`)
     redirect(`/games/edit/${id}`)
 }
+
+export async function editBio(id){
+    await db.query(`SELECT * FROM user_info`)
+    revalidatePath(`/profile/${id}`)
+    redirect(`/profile/edit/${id}`)
+}

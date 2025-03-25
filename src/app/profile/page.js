@@ -3,6 +3,7 @@ import { db } from "../utils/db";
 import UserForm from "../components/UserForm";
 import Image from "next/image"
 import Link from "next/link";
+import EditBio from "../components/EditBio";
 
 export default async function Page() {
 
@@ -65,6 +66,7 @@ export default async function Page() {
             <Image className="m-5 rounded-full shadow-black shadow-md" src={user.externalAccounts[0].imageUrl} height={200} width={200} alt="Your profile picture"/>
             <p>What you told us about yourself: </p>
             <p>{userInfo.rows[0].bio}</p>
+            <EditBio id={userInfo.rows[0].id}/>
             <br/>
             <h1>Reviews from {userInfo.rows[0].username}: </h1>
             {reviews.map(renderReview)}
