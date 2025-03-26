@@ -14,11 +14,10 @@ export default async function Page() {
       {games.rows.map((game) => (
         <div key={game.id} className="m-2 p-2 border-2 ml-50">
           <h1 className="text-3xl">{game.game_name}</h1>
-          <p>{game.game_info}</p>
           <Image
             src={game.game_img}
             alt="game poster"
-            width={250}
+            width={200}
             height={150}
           ></Image>
           <Link href={`/games/${game.id}`} className="text-blue-500">

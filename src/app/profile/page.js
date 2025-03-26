@@ -15,7 +15,8 @@ export default async function Page() {
     if(!user) return redirectToSignIn()
 
     const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
-    if(userInfo.rows.clerk_id === null){
+    
+    if(userInfo.rowCount == 0){
       return(
           <div>
               <UserForm />
@@ -23,8 +24,6 @@ export default async function Page() {
       )
     }
     const clerkId = userInfo.rows[0].clerk_id
-
-    
 
     const data = await db.query(`SELECT * FROM game_review WHERE clerk_id = $1`, [clerkId])
     const reviews = data.rows
@@ -51,6 +50,7 @@ export default async function Page() {
                     <Link href={`/games/${story.game_id}`}>{game.rows[0].game_name}</Link>
                     &nbsp;Story
                 </p>
+                <h6>{new Date(story.time_created).toLocaleString()}</h6>
                 <DeleteStoryButton id={clerkId} />
                 <br/>
               </div>
@@ -67,6 +67,7 @@ export default async function Page() {
                   <Link href={`/games/${review.game_id}`}>{game.rows[0].game_name}</Link>
                 </p>
                 <h2>{review.review_cont}</h2>
+                <h6>{new Date(review.time_created).toLocaleString()}</h6>
                 <DeleteReviewButton id={clerkId} />
               </div>
             );
