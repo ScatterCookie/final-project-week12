@@ -4,17 +4,13 @@ import { db } from "./utils/db";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
 
-import { Rock_Salt } from '@next/font/google'
+// import { Rock_Salt } from '@next/font/google'
 
-const rockSalt = Rock_Salt({
-  weight: '400',
-  style: 'normal', // or 'italic'
-  subsets: ['latin'] // or other subsets you need
-})
-
-
-
-
+// const rockSalt = Rock_Salt({
+//   weight: '400',
+//   style: 'normal', // or 'italic'
+//   subsets: ['latin'] // or other subsets you need
+// })
 
 export default async function Home() {
   const games = await db.query("SELECT * FROM games");
@@ -74,7 +70,7 @@ export default async function Home() {
             </Link>
           </div>
         </div>
-      </div>  
+      </div>
     </div>
   );
 }
