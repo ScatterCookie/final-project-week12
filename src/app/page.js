@@ -4,13 +4,13 @@ import { db } from "./utils/db";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
 
-import { Rock_Salt } from '@next/font/google'
+// import { Rock_Salt } from '@next/font/google'
 
-const rockSalt = Rock_Salt({
-  weight: '400',
-  style: 'normal', // or 'italic'
-  subsets: ['latin'] // or other subsets you need
-})
+// const rockSalt = Rock_Salt({
+//   weight: '400',
+//   style: 'normal', // or 'italic'
+//   subsets: ['latin'] // or other subsets you need
+// })
 
 
 
@@ -20,7 +20,7 @@ export default async function Home() {
   const games = await db.query("SELECT * FROM games");
   return (
     <div>
-      <p className={rockSalt.className}>Welcome To the Week 12 Project.</p>
+      <p>Welcome To the Week 12 Project.</p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>
