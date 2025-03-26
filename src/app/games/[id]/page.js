@@ -61,6 +61,7 @@ export default async function Page({ params }) {
         <div key={story.id}>
           <h1>{story.story_title}</h1>
           <p>{story.story_cont}</p>
+          <h6>{new Date(story.time_created).toLocaleString("en-GB")}</h6>
         </div>
       ))}
     </div>
