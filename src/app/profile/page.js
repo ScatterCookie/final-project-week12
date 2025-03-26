@@ -14,21 +14,31 @@ export default async function Page() {
 
     if(!user) return redirectToSignIn()
 
-    if(!user){
+    const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
+    if(userInfo.rows.clerk_id == undefined){
       return(
           <div>
               <UserForm />
           </div>
       )
     }
-
-    const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
     const clerkId = userInfo.rows[0].clerk_id
+
+    
 
     const data = await db.query(`SELECT * FROM game_review WHERE clerk_id = $1`, [clerkId])
     const reviews = data.rows
 
     const stories = await db.query(`SELECT * FROM game_stories WHERE clerk_id = $1`, [clerkId])
+
+
+    if(!clerkId){
+      return(
+          <div>
+              <UserForm />
+          </div>
+      )
+    }
 
     
         async function renderStory(story) {
