@@ -49,7 +49,10 @@ export default async function Page() {
       story.game_id,
     ]);
     return (
-      <div key={story.clerk_id}>
+      <div
+        key={story.clerk_id}
+        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
+      >
         <h2>{story.story_title}</h2>
         <p>{story.story_cont}</p>
         <p>
@@ -68,7 +71,10 @@ export default async function Page() {
       review.game_id,
     ]);
     return (
-      <div key={review.id}>
+      <div
+        key={review.id}
+        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
+      >
         <p>
           <Link href={`/games/${review.game_id}`}>
             {game.rows[0].game_name}
@@ -81,25 +87,34 @@ export default async function Page() {
   }
   return (
     <>
-      <div>
-        <p>Hello {userInfo.rows[0].username}, Welcome to your profile!</p>
-        <br />
-        <Image
-          className="m-5 rounded-full shadow-black shadow-md"
-          src={user.externalAccounts[0].imageUrl}
-          height={200}
-          width={200}
-          alt="Your profile picture"
-        />
-        <p>What you told us about yourself: </p>
-        <p>{userInfo.rows[0].bio}</p>
-        <EditBio id={userInfo.rows[0].id} />
-        <br />
-        <h1>Reviews from {userInfo.rows[0].username}: </h1>
-        {reviews.map(renderReview)}
-        <br />
-        <h1>Stories from {userInfo.rows[0].username}: </h1>
-        {stories.rows.map(renderStory)}
+      <div className="bg-blue-400 border-stone-500 border-2 rounded w-full text-slate-800 flex flex-col items-center gap-2">
+        <p className="text-3xl m-4">
+          Hello {userInfo.rows[0].username}, Welcome to your profile!
+        </p>
+        <div className="bg-pink-300 border-stone-500 border-2 rounded w-1/2 flex ">
+          <Image
+            className="m-5 rounded-full shadow-black shadow-md"
+            src={user.externalAccounts[0].imageUrl}
+            height={200}
+            width={200}
+            alt="Your profile picture"
+          />
+          <div className="flex flex-col items-start bg-pink-300">
+            <p>What you told us about yourself: </p>
+            <p>{userInfo.rows[0].bio}</p>
+          </div>
+          <div className="absolute">
+            <EditBio id={userInfo.rows[0].id} />
+          </div>
+        </div>
+        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
+          <h1 className="p-2">Reviews from {userInfo.rows[0].username}: </h1>
+          {reviews.map(renderReview)}
+        </div>
+        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
+          <h1>Stories from {userInfo.rows[0].username}: </h1>
+          {stories.rows.map(renderStory)}
+        </div>
       </div>
     </>
   );
