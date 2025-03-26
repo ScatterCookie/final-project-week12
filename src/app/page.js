@@ -17,7 +17,7 @@ export default async function Home() {
                 src={games.rows[games.rows.length - 1].game_img}
                 alt={games.rows[games.rows.length - 1].game_name}
                 height={250}
-                width={150}
+                width={200}
               />
             </Link>
           </div>
@@ -27,7 +27,7 @@ export default async function Home() {
                 src={games.rows[games.rows.length - 2].game_img}
                 alt={games.rows[games.rows.length - 2].game_name}
                 height={250}
-                width={150}
+                width={200}
               />
             </Link>
           </div>
@@ -37,7 +37,7 @@ export default async function Home() {
                 src={games.rows[games.rows.length - 3].game_img}
                 alt={games.rows[games.rows.length - 3].game_name}
                 height={250}
-                width={150}
+                width={200}
               />
             </Link>
           </div>
@@ -47,7 +47,7 @@ export default async function Home() {
                 src={games.rows[games.rows.length - 4].game_img}
                 alt={games.rows[games.rows.length - 4].game_name}
                 height={250}
-                width={150}
+                width={200}
               />
             </Link>
           </div>
@@ -57,7 +57,7 @@ export default async function Home() {
                 src={games.rows[games.rows.length - 5].game_img}
                 alt={games.rows[games.rows.length - 5].game_name}
                 height={250}
-                width={150}
+                width={200}
               />
             </Link>
           </div>
