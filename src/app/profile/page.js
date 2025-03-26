@@ -29,6 +29,7 @@ export default async function Page() {
     const data = await db.query(`SELECT * FROM game_review WHERE clerk_id = $1`, [clerkId])
     const reviews = data.rows
 
+
     const stories = await db.query(`SELECT * FROM game_stories WHERE clerk_id = $1`, [clerkId])
 
 
