@@ -7,7 +7,7 @@ import NewGameForm from "../components/NewGameForm";
 
 export default async function Page() {
   const games = await db.query("SELECT * FROM games");
-  console.log(games);
+
   return (
     <div className="bigMargin">
       <NewGameForm />

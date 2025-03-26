@@ -4,6 +4,7 @@ import NewStory from "@/app/components/NewStory";
 import { db } from "@/app/utils/db";
 import Image from "next/image";
 import EditButton from "@/app/components/Editgame";
+import DeleteButton from "@/app/components/DeleteGame";
 
 export default async function Page({ params }) {
   const id = await params;
@@ -27,6 +28,7 @@ export default async function Page({ params }) {
       ></Image>
       <p>{gameData.rows[0].game_info}</p>
       <EditButton id={gameData.rows[0].id} />
+      <DeleteButton id={gameData.rows[0].id} />
 
       <NewReview id={id} />
       {reviews.rows.map((review) => (

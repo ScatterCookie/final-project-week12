@@ -12,10 +12,6 @@ const rockSalt = Rock_Salt({
   subsets: ['latin'] // or other subsets you need
 })
 
-
-
-
-
 export default async function Home() {
   const games = await db.query("SELECT * FROM games");
   return (
