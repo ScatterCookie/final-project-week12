@@ -10,14 +10,14 @@ import {
   SignIn,
   SignUp,
 } from "@clerk/nextjs";
+
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Clerk from "./components/Clerk";
 import Image from "next/image";
 import Link from "next/link";
 import mainStyles from "./css/main.module.css";
-import navcssStyles from "./css/navcss.module.css";
-
+import navCssStyles from "./css/navCss.module.css";
 
 export const metadata = {
   title: "Clerk Next.js Quickstart",
@@ -29,10 +29,10 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body>
-          <header className={navcssStyles.navcss}>
-            <div className="flex gap-3 justify-between">
-              <NavBar />
-              <Clerk />
+          <header className={navCssStyles.header}>
+            <div className={navCssStyles.nav}>
+              <div className={navCssStyles.start}><NavBar /></div>
+              <div className={navCssStyles.end}><Clerk /></div>           
             </div>
           </header>
           <main className={mainStyles.main}>{children}</main>

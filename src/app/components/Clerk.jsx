@@ -1,5 +1,5 @@
 import Link from "next/link";
-import navcssStyles from "../css/navcss.module.css";
+import navCssStyles from "../css/navCss.module.css";
 import {
   ClerkProvider,
   SignInButton,
@@ -16,7 +16,7 @@ import {
 export default function Header() {
   return (
     <>
-      <div className="flex m-1">
+      <div className="flex gap-2">
         <p>Welcome |&nbsp;</p>
         <SignedOut>
           <SignInButton />
