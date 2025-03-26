@@ -4,7 +4,9 @@ import NewStory from "@/app/components/NewStory";
 import { db } from "@/app/utils/db";
 import Image from "next/image";
 import EditButton from "@/app/components/Editgame";
+import DeleteButton from "@/app/components/DeleteGame";
 import Link from "next/link";
+
 
 export default async function Page({ params }) {
   const id = await params;
@@ -33,6 +35,7 @@ export default async function Page({ params }) {
       ></Image>
       <p>{gameData.rows[0].game_info}</p>
       <EditButton id={gameData.rows[0].id} />
+      <DeleteButton id={gameData.rows[0].id} />
       <div className="flex">
         {youtubeResponse.items.map((video) => (
           <div key={video.etag}>
