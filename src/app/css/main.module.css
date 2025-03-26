@@ -6,7 +6,7 @@
   box-sizing: border-box;
   width: 98%;
   height: auto;
-  min-height: 90vh;
+  min-height: 100vh;
   max-height: 100%;
   align-content: center;
   justify-content: center;
@@ -44,7 +44,7 @@
 }
 
 .box {
-  background: orange;
+  background: black;
   height: 250px;
   width: 150px;
   margin: 10px -250px;
@@ -80,4 +80,11 @@
 }
 .item5{
   animation-delay: calc(15s / 5 * (5 - 5) * -1);
+}
+
+@media (max-width: 500px) {
+  .container {
+    width: 275px;
+  }
+  
 }

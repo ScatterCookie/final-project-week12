@@ -9,7 +9,7 @@ export default async function Page() {
   const games = await db.query("SELECT * FROM games");
   console.log(games);
   return (
-    <div className="bigMargin">
+    <div className="flex bigMargin">
       <NewGameForm />
       {games.rows.map((game) => (
         <div key={game.id} className="m-2 p-2 border-2 ml-50">
