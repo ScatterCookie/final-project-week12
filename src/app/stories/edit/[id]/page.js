@@ -21,7 +21,6 @@ export default async function EditBio({params}) {
 
     const res = await db.query(`SELECT * FROM game_stories WHERE id = $1`, [id])
     const content = res.rows[0]
-    console.log(content)
 
     
     return (

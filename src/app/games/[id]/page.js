@@ -4,6 +4,9 @@ import NewStory from "@/app/components/NewStory";
 import { db } from "@/app/utils/db";
 import Image from "next/image";
 import EditButton from "@/app/components/Editgame";
+import DeleteButton from "@/app/components/DeleteGame";
+import Link from "next/link";
+
 
 export default async function Page({ params }) {
   const id = await params;
@@ -16,6 +19,11 @@ export default async function Page({ params }) {
     "SELECT * FROM game_stories WHERE game_id = $1",
     [id.id]
   );
+  const youtubeSearch = await fetch(
+    `https://www.googleapis.com/youtube/v3/search?part=snippet&q=${gameData.rows[0].game_name}&maxResults=10&type=video&key=AIzaSyABiSCRECheWyoruOwQs0AN81RKWe3-gsU`
+  );
+  const youtubeResponse = await youtubeSearch.json();
+
   return (
     <div>
       <h1 className="text-3xl">{gameData.rows[0].game_name}!</h1>
@@ -27,7 +35,21 @@ export default async function Page({ params }) {
       ></Image>
       <p>{gameData.rows[0].game_info}</p>
       <EditButton id={gameData.rows[0].id} />
-
+      <DeleteButton id={gameData.rows[0].id} />
+      <div className="flex">
+        {youtubeResponse.items.map((video) => (
+          <div key={video.etag}>
+            <Link href={`https://www.youtube.com/watch?v=${video.id.videoId}`}>
+              <Image
+                src={video.snippet.thumbnails.default.url}
+                alt={`${video.snippet.title} thumbnail`}
+                width={120}
+                height={90}
+              ></Image>
+            </Link>
+          </div>
+        ))}
+      </div>
       <NewReview id={id} />
       {reviews.rows.map((review) => (
         <div key={review.id}>
