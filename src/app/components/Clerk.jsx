@@ -17,7 +17,7 @@ export default function Header() {
   return (
     <>
       <div className="flex gap-2">
-        <p>Welcome |&nbsp;</p>
+        {/* <p>Welcome |&nbsp;</p> */}
         <SignedOut>
           <SignInButton />
           <SignUpButton />

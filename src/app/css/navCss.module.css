@@ -35,16 +35,6 @@
     background-color: rgba(50, 0, 50, 1);
   }
   
-  /* .navButton:hover, .element.active {
-    border: inset;
-    border-color: rgb(100, 0, 100);
-    color: rgba(200, 0, 200, 1);
-    background: linear-gradient(-45deg, rgba(100, 0, 100, 1) 40%, rgba(255, 0, 255, 1) 50%, rgba(100, 0, 100, 1) 80%);
-    background-size: 600%;
-    background-position-x: 100%;
-    animation: shimmer 2s infinite linear;
-  } */
-
   .navButton:hover, .element.active {
     border: inset;
     border-color: rgb(100, 0, 100);
@@ -94,4 +84,40 @@
   flex-direction: column;
     display: flex;
     justify-content: flex-end;
+  }
+
+  @media (max-width: 600px) {
+    .start, .end {
+      justify-content: center;
+    }
+  }
+  
+  @media screen and (max-width: 800px) {
+    .hideTextH, .hideTextG, .hideTextS, .hideTextP {
+      text-indent: 100%;
+      white-space: nowrap;
+      overflow: hidden;
+      background-repeat: no-repeat;
+      background-size: 25px 25px;
+      background-position: center;
+    }
+    .hideTextH {
+      background-image: url("/home.png");
+    }
+    .hideTextG {
+      background-image: url("/game.png");
+    }
+    .hideTextS {
+      background-image: url("/book.png");
+    }
+    .hideTextP {
+      background-image: url("/people.png");
+    }
+    .navButton {
+      height: 40px;
+      width: 50px;
+    }
+    .nav {
+      gap: 10px;
+    }
   }
