@@ -4,6 +4,8 @@ import UserForm from "../components/UserForm";
 import Image from "next/image"
 import Link from "next/link";
 import EditBio from "../components/EditBio";
+import DeleteReviewButton from "../components/DeleteReview";
+import DeleteStoryButton from "../components/DeleteStory";
 
 export default async function Page() {
 
@@ -31,7 +33,6 @@ export default async function Page() {
     
         async function renderStory(story) {
             const game = await db.query(`SELECT * FROM games WHERE id = $1`, [story.game_id]);
-            
             return (
               <div key={story.clerk_id}>
                 <h2>{story.story_title}</h2>
@@ -40,6 +41,7 @@ export default async function Page() {
                     <Link href={`/games/${story.game_id}`}>{game.rows[0].game_name}</Link>
                     &nbsp;Story
                 </p>
+                <DeleteStoryButton id={clerkId} />
                 <br/>
               </div>
             );
@@ -55,6 +57,7 @@ export default async function Page() {
                   <Link href={`/games/${review.game_id}`}>{game.rows[0].game_name}</Link>
                 </p>
                 <h2>{review.review_cont}</h2>
+                <DeleteReviewButton id={clerkId} />
               </div>
             );
           }
