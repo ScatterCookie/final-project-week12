@@ -13,7 +13,7 @@ export default async function Page() {
     const game = await db.query("SELECT * FROM games WHERE id = $1", [
       story.game_id,
     ]);
-    console.log(user.id)
+
     return (
       <div key={story.id}>
         <h2>{story.story_title}</h2>

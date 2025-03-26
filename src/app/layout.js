@@ -10,7 +10,6 @@ import {
   SignIn,
   SignUp,
 } from "@clerk/nextjs";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import NavBar from "./components/NavBar";
 import Clerk from "./components/Clerk";
@@ -19,15 +18,6 @@ import Link from "next/link";
 import mainStyles from "./css/main.module.css";
 import navcssStyles from "./css/navcss.module.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
 
 export const metadata = {
   title: "Clerk Next.js Quickstart",
