@@ -10,9 +10,9 @@ export async function editGame(id){
 }
 
 export async function editStory(id){
-    await db.query(`SELECT * FROM games`)
-    revalidatePath(`/games/edit/`)
-    redirect(`/games/edit/${id}`)
+    await db.query(`SELECT * FROM game_stories`)
+    revalidatePath(`/stories/edit/`)
+    redirect(`/stories/edit/${id}`)
 }
 
 export async function editReview(id){
