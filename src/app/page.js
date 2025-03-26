@@ -16,7 +16,7 @@ export default async function Home() {
   const games = await db.query("SELECT * FROM games");
   return (
     <div>
-      <p className={rockSalt.className}>Welcome To the Week 12 Project.</p>
+      <p className="">Welcome To the Week 12 Project.</p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>
