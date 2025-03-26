@@ -15,7 +15,7 @@ export default async function Page() {
     if(!user) return redirectToSignIn()
 
     const userInfo = await db.query(`SELECT * FROM user_info WHERE clerk_id = $1`, [userId])
-    if(userInfo.rows.clerk_id == undefined){
+    if(userInfo.rows.clerk_id === null){
       return(
           <div>
               <UserForm />
