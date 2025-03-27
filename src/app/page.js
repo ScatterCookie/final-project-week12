@@ -5,7 +5,7 @@ import Link from "next/link";
 import mainStyles from "./css/main.module.css";
 
 export default async function Home() {
-  const games = await db.query("SELECT * FROM games");
+  const games = await db.query("SELECT * FROM games ORDER BY id");
 
   const stories = await db.query(`SELECT * FROM game_stories`);
 
