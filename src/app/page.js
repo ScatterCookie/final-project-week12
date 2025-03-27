@@ -71,14 +71,14 @@ export default async function Home() {
         </div>
       </div>
       <div>
-        <h1>Current Users:</h1>
-        <p>{users.rowCount}</p>
         <h1>Current Total Games Added:</h1>
         <p>{games.rowCount}</p>
         <h1>Current Stories Written:</h1>
         <p>{stories.rowCount}</p>
         <h1>Total Reviews Posted:</h1>
         <p>{reviews.rowCount}</p>
+        <h1>Current Contributors:</h1>
+        <p>{users.rowCount}</p>
       </div>
     </div>
   );
