@@ -4,6 +4,10 @@ rgb(125, 125, 100);
 rgb(125, 125, 125); */
 /* rgb(250, 175, 225); */
 
+.editBio {
+    position: absolute;
+}
+
 .wrapper {
     display: flex;
     flex-direction: column;
@@ -102,4 +106,10 @@ rgb(125, 125, 125); */
 
 .title, .remove, .para {
     background-color: rgb(125, 125, 125);
+}
+
+@media (800) {
+    .editBio {
+        position: sticky;
+    }
 }
