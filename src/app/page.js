@@ -11,6 +11,8 @@ export default async function Home() {
 
   const reviews = await db.query(`SELECT * FROM game_review`);
 
+  const users = await db.query(`SELECT * FROM user_info`);
+
   return (
     <div>
       <p>Welcome To the Week 12 Project.</p>
@@ -69,6 +71,8 @@ export default async function Home() {
         </div>
       </div>
       <div>
+        <h1>Current Users:</h1>
+        <p>{users.rowCount}</p>
         <h1>Current Total Games Added:</h1>
         <p>{games.rowCount}</p>
         <h1>Current Stories Written:</h1>
