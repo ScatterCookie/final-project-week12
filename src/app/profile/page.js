@@ -6,6 +6,7 @@ import Link from "next/link";
 import EditBio from "../components/EditBio";
 import DeleteReviewButton from "../components/DeleteReview";
 import DeleteStoryButton from "../components/DeleteStory";
+import profileStyles from "../css/profile.module.css";
 
 export default async function Page() {
   const { userId, redirectToSignIn } = await auth();
@@ -103,7 +104,7 @@ export default async function Page() {
             <p>What you told us about yourself: </p>
             <p className="text-left">{userInfo.rows[0].bio}</p>
           </div>
-          <div className="absolute">
+          <div className={profileStyles.editBio}>
             <EditBio id={userInfo.rows[0].id} />
           </div>
         </div>

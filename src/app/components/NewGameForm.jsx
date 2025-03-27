@@ -20,7 +20,7 @@ export default function NewGameForm() {
   return (
     <div className={newGameFormStyles.container}>
       <form action={handleNewGame}>
-        <label className={newGameFormStyles.gameinfo} htmlFor="game_name">Game Title</label>
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_name">Game Title</label>
         <input
           id="game_name"
           name="game_name"
@@ -29,7 +29,7 @@ export default function NewGameForm() {
           required
         />
 
-        <label className={newGameFormStyles.gameDescription} htmlFor="game_info">Game Description</label>
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_info">Game Description</label>
         <input
           id="game_info"
           name="game_info"
@@ -39,7 +39,7 @@ export default function NewGameForm() {
           required
         />
 
-        <label className={newGameFormStyles.gameinfo} htmlFor="game_img">Game Poster</label>
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_img">Game Poster</label>
         <input
           id="game_img"
           name="game_img"
