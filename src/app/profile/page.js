@@ -104,7 +104,7 @@ export default async function Page() {
             <p>What you told us about yourself: </p>
             <p className="text-left">{userInfo.rows[0].bio}</p>
           </div>
-          <div className={profileStyles.editBio}>
+          <div className="absolute">
             <EditBio id={userInfo.rows[0].id} />
           </div>
         </div>
