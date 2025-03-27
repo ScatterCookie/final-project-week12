@@ -40,9 +40,6 @@
   animation-timing-function: linear;
 }
 
-/* .box:hover {
-  animation-play-state: paused;
-} */
 
 @keyframes move {
   to {
@@ -50,19 +47,19 @@
   }
 }
 
-.item1{
+.item1 {
   animation-delay: calc(15s / 5 * (5 - 1) * -1);
 }
-.item2{
+.item2 {
   animation-delay: calc(15s / 5 * (5 - 2) * -1);
 }
-.item3{
+.item3 {
   animation-delay: calc(15s / 5 * (5 - 3) * -1);
 }
-.item4{
+.item4 {
   animation-delay: calc(15s / 5 * (5 - 4) * -1);
 }
-.item5{
+.item5 {
   animation-delay: calc(15s / 5 * (5 - 5) * -1);
 }
 
@@ -70,5 +67,4 @@
   .container {
     width: 275px;
   }
-  
 }

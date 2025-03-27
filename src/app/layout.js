@@ -29,12 +29,18 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body>
-          <header className={navCssStyles.header}>
-            <div className={navCssStyles.nav}>
-              <div className={navCssStyles.start}><NavBar /></div>
-              <div className={navCssStyles.end}><Clerk /></div>           
-            </div>
-          </header>
+          <div className="">
+            <header className={navCssStyles.header}>
+              <div className={navCssStyles.nav}>
+                <div className={navCssStyles.start}>
+                  <NavBar />
+                </div>
+                <div className={navCssStyles.end}>
+                  <Clerk />
+                </div>
+              </div>
+            </header>
+          </div>
           <main className={mainStyles.main}>{children}</main>
         </body>
       </html>
