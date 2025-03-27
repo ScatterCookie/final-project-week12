@@ -101,7 +101,7 @@ export default async function Page() {
           />
           <div className="flex flex-col items-start bg-pink-300">
             <p>What you told us about yourself: </p>
-            <p>{userInfo.rows[0].bio}</p>
+            <p className="text-left">{userInfo.rows[0].bio}</p>
           </div>
           <div className="absolute">
             <EditBio id={userInfo.rows[0].id} />
