@@ -6,6 +6,11 @@ import mainStyles from "./css/main.module.css";
 
 export default async function Home() {
   const games = await db.query("SELECT * FROM games");
+
+  const stories = await db.query(`SELECT * FROM game_stories`);
+
+  const reviews = await db.query(`SELECT * FROM game_review`);
+
   return (
     <div>
       <p>Welcome To the Week 12 Project.</p>
@@ -62,6 +67,14 @@ export default async function Home() {
             </Link>
           </div>
         </div>
+      </div>
+      <div>
+        <h1>Current Total Games Added:</h1>
+        <p>{games.rowCount}</p>
+        <h1>Current Stories Written:</h1>
+        <p>{stories.rowCount}</p>
+        <h1>Total Reviews Posted:</h1>
+        <p>{reviews.rowCount}</p>
       </div>
     </div>
   );
