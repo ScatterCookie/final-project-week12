@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <div>
-      <p>Welcome To the Week 12 Project.</p>
+      <p className={mainStyles.para}>Welcome To the Week 12 Project.</p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>
@@ -71,14 +71,14 @@ export default async function Home() {
         </div>
       </div>
       <div>
-        <h1>Current Total Games Added:</h1>
-        <p>{games.rowCount}</p>
-        <h1>Current Stories Written:</h1>
-        <p>{stories.rowCount}</p>
-        <h1>Total Reviews Posted:</h1>
-        <p>{reviews.rowCount}</p>
-        <h1>Current Contributors:</h1>
-        <p>{users.rowCount}</p>
+        <h1 className={mainStyles.para}>Current Total Games Added:</h1>
+        <p className={mainStyles.number}>{games.rowCount}</p>
+        <h1 className={mainStyles.para}>Current Stories Written:</h1>
+        <p className={mainStyles.number}>{stories.rowCount}</p>
+        <h1 className={mainStyles.para}>Total Reviews Posted:</h1>
+        <p className={mainStyles.number}>{reviews.rowCount}</p>
+        <h1 className={mainStyles.para}>Current Contributors:</h1>
+        <p className={mainStyles.number}>{users.rowCount}</p>
       </div>
     </div>
   );

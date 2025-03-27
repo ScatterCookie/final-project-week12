@@ -9,7 +9,7 @@
   justify-self: center;
   justify-items: center;
   margin: 0;
-  color: rgb(244, 128, 255);
+  color: rgb(0, 0, 0);
   text-align: center;
   font-size: 20px;
   font-weight: 800;
@@ -17,33 +17,52 @@
 
 .container {
   position: relative;
+  box-sizing: border-box;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  height: 250px;
+  height: 300px;
+  padding: 5px;
   width: 400px;
-  border: 1px solid #333;
+  border: 3px solid #333;
   overflow: hidden;
-  margin: 25px auto;
+  margin: 10px;
+  background-color: black;
+  border: inset;
+  border-color: rgb(100, 100, 100);
 }
 
+.para {
+  color: black;
+  background-color: rgb(250, 150, 225);
+  font-weight: 700;
+}
+
+.number {
+  display: flex;
+  color: white;
+  background-color: black;
+  justify-content: end;
+  padding-right: 20;
+}
 .box {
   background: rgb(0, 0, 0, 0);
-  height: 275px;
-  margin: 10px -50px;
+  height: 250px;
+  margin-top: -20px;
   animation-name: move;
   position: absolute;
   animation-duration: 15s;
   animation-iteration-count: infinite;
   left: max(calc(200px * 5), 100%);
   animation-timing-function: linear;
+  align-content: center;
 }
 
 
 @keyframes move {
   to {
-    left: -100
+    left: -150
   }
 }
 

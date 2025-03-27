@@ -6,6 +6,7 @@ import Link from "next/link";
 import EditBio from "../components/EditBio";
 import DeleteReviewButton from "../components/DeleteReview";
 import DeleteStoryButton from "../components/DeleteStory";
+import profileStyles from "../css/profile.module.css";
 
 export default async function Page() {
   const { userId, redirectToSignIn } = await auth();
@@ -49,13 +50,13 @@ export default async function Page() {
       story.game_id,
     ]);
     return (
-      <div
+      <div className={profileStyles.container}
         key={story.clerk_id}
-        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
+        
       >
-        <h2>{story.story_title}</h2>
-        <p>{story.story_cont}</p>
-        <p>
+        <h2 className={profileStyles.title}>{story.story_title}</h2>
+        <p className={profileStyles.para}>{story.story_cont}</p>
+        <p className={profileStyles.para}>
           A&nbsp;
           <Link href={`/games/${story.game_id}`}>{game.rows[0].game_name}</Link>
           &nbsp;Story
@@ -71,51 +72,53 @@ export default async function Page() {
       review.game_id,
     ]);
     return (
-      <div
-        key={review.id}
-        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
-      >
-        <p>
+      <div className={profileStyles.wrapperreview} key={review.id}>
+        <div className={profileStyles.title}>
           <Link href={`/games/${review.game_id}`}>
             {game.rows[0].game_name}
           </Link>
-        </p>
-        <h2>{review.review_cont}</h2>
+        </div>
+        <h2 className={profileStyles.para}>{review.review_cont}</h2>
         <DeleteReviewButton id={clerkId} />
       </div>
     );
   }
   return (
     <>
-      <div className="bg-blue-400 border-stone-500 border-2 rounded w-full text-slate-800 flex flex-col items-center gap-2">
-        <p className="text-3xl m-4">
-          Hello {userInfo.rows[0].username}, Welcome to your profile!
-        </p>
-        <div className="bg-pink-300 border-stone-500 border-2 rounded w-1/2 flex ">
-          <Image
-            className="m-5 rounded-full shadow-black shadow-md"
+    <div>
+      <div className={profileStyles.wrappereditbio}>
+        <div className={profileStyles.para}>
+          <p className={profileStyles.circle}><EditBio id={userInfo.rows[0].id} /></p>
+        </div> 
+        <div className={profileStyles.wrapper}>   
+          <p className={profileStyles.title}>
+          Hello {userInfo.rows[0].username},</p>
+          <p className={profileStyles.para}> Welcome to your profile!</p>
+        </div> 
+      </div>
+      <div className={profileStyles.wrapper}>
+        <Image
+            className={profileStyles.para}
             src={user.externalAccounts[0].imageUrl}
             height={200}
             width={200}
             alt="Your profile picture"
           />
-          <div className="flex flex-col items-start bg-pink-300">
-            <p>What you told us about yourself: </p>
-            <p className="text-left">{userInfo.rows[0].bio}</p>
-          </div>
-          <div className="absolute">
-            <EditBio id={userInfo.rows[0].id} />
-          </div>
-        </div>
-        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
-          <h1 className="p-2">Reviews from {userInfo.rows[0].username}: </h1>
-          {reviews.map(renderReview)}
-        </div>
-        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
-          <h1>Stories from {userInfo.rows[0].username}: </h1>
-          {stories.rows.map(renderStory)}
+        <div className={profileStyles.wrapperBio}>
+          <p className={profileStyles.title}>What you told us about yourself: </p>
+          <p className={profileStyles.para}>{userInfo.rows[0].bio}</p>
         </div>
       </div>
+    </div>            
+    <div className={profileStyles.wrapperreview}>
+      <h1 className={profileStyles.title}>Reviews from {userInfo.rows[0].username}: </h1>
+      <p className={profileStyles.para}>{reviews.map(renderReview)}</p>
+    </div>
+    <div className={profileStyles.wrapperstories}>
+      <h1 className={profileStyles.para}>Stories from {userInfo.rows[0].username}: </h1>
+      <p className={profileStyles.para}>{stories.rows.map(renderStory)}</p>
+    </div>
+     
     </>
   );
 }

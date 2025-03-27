@@ -6,15 +6,14 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: rgb(161, 127, 255);
+  color: rgb(0, 0, 0);
   font-size: x-large;
   background-image: linear-gradient(
     to right,
-   
-    rgba(125, 0, 1) 1%,
-    rgba(50, 0, 1) 3%,
-    rgba(50, 0, 1) 97%,
-    rgba(125, 0, 1) 99%
+    rgb(50, 125, 250) 1%,
+    rgba(100, 150, 250) 3%,
+    rgba(100, 150, 250) 97%,
+    rgba(50, 125, 250) 99%
   )
 }
 .bigMargin {
