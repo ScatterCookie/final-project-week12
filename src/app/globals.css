@@ -2,19 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --main-color: rgb(0, 0, 0);
+  --secBg-color: rgb(250, 175, 225);
+  --secBg2-color: rgb(250, 100, 225);
+  --mainbg1-color: rgb(100, 150, 250);
+  --mainbg2-color: rgb(50, 125, 250);
+
+  --border1-color: rgb(125, 125, 100);
+  --border2-color: rgb(125, 125, 125);
+  --main4-color: rgb(250, 175, 225);
+}
+
 body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  color: rgb(0, 0, 0);
-  font-size: x-large;
+  color: var(--main-color);
+  font-size: large;
   background-image: linear-gradient(
     to right,
-    rgb(50, 125, 250) 1%,
-    rgba(100, 150, 250) 3%,
-    rgba(100, 150, 250) 97%,
-    rgba(50, 125, 250) 99%
-  )
+    var(--mainbg2-color) 1%,
+    var(--mainbg1-color) 3%,
+    var(--mainbg1-color) 97%,
+    var(--mainbg2-color) 99%
+  );
 }
 .bigMargin {
   padding-left: 3%;

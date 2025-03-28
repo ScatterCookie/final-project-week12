@@ -1,124 +1,128 @@
 .nav {
-    box-sizing: border-box;
-    width: 100vw;
-    max-width: 100%;
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: space-evenly;
-    align-items: center;
-    border: outset;
-    border-color: rgb(100, 0, 100);
-    padding-left: 5%;
-    padding-right: 5%;
-    margin-left: 1%;
-    margin-right: 1%;
-    gap: 50%;
-    height: 60px;
-    font-size: 10px;
-    font-weight: 800;
-    color: rgb(233, 143, 113);
-    background-color: rgba(75, 0, 100, 0.5);
-  }
-  
-  .navButton {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 50px;
-    width: 75px;
-    border: outset;
-    border-color: rgb(100, 0, 100);
-    border-radius: 20%;
-    color: rgb(100, 100, 100);
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
-    background-color: rgba(50, 0, 50, 1);
-  }
-  
-  .navButton:hover, .element.active {
-    border: inset;
-    border-color: rgb(100, 0, 100);
-    color: rgba(200, 0, 200, 1);
-    background: linear-gradient(
-      -45deg,
-      rgba(100, 0, 100, 1) 40%,
-      rgba(255, 0, 255, 1) 50%,
-      rgba(100, 0, 100, 1) 80%
-    );
-    background-size: 600%;
-    background-position-x: 100%;
-    animation: shimmer 2s infinite linear;
-  }
-  
-  @keyframes shimmer {
-    0% {
-      background-position-x: 100%;
-    }
-    100% {
-      background-position-x: 0%;
-    }
-  }
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-evenly;
+  align-items: center;
+  border: outset;
+  border-color: rgb(100, 0, 100);
+  padding-left: 5%;
+  padding-right: 5%;
+  margin-left: 1%;
+  margin-right: 1%;
+  gap: 50%;
+  height: 60px;
+  font-size: 10px;
+  font-weight: 800;
+  color: rgb(233, 143, 113);
+  background-color: rgba(75, 0, 100, 0.5);
+}
 
-  .header {
-    box-sizing: border-box;
-    width: 100vw;
-    max-width: 99%;
-    display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    margin: 10px;
-    height: 80px;
-    border: outset;
-    border-color: rgb(75, 0, 0);
-    background-color: rgb(125, 0, 0);
+.navButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 75px;
+  border: outset;
+  border-color: rgb(100, 0, 100);
+  border-radius: 20%;
+  color: rgb(100, 100, 100);
+  text-shadow: 1px 1px 3px rgb(0, 0, 0);
+  background-color: rgba(50, 0, 50, 1);
+}
+
+.navButton:hover,
+.element.active {
+  border: inset;
+  border-color: rgb(100, 0, 100);
+  color: rgba(200, 0, 200, 1);
+  background: linear-gradient(
+    -45deg,
+    rgba(100, 0, 100, 1) 40%,
+    rgba(255, 0, 255, 1) 50%,
+    rgba(100, 0, 100, 1) 80%
+  );
+  background-size: 600%;
+  background-position-x: 100%;
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position-x: 100%;
   }
-  
+  100% {
+    background-position-x: 0%;
+  }
+}
+
+.header {
+  box-sizing: border-box;
+  width: 100vw;
+  max-width: 99%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 10px;
+  height: 80px;
+  border: outset;
+  border-color: var(--secBg2-color);
+  background-color: var(--secBg2-color);
+}
 
 .start {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-  }
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
 
 .end {
   flex-direction: column;
-    display: flex;
-    justify-content: flex-end;
-  }
+  display: flex;
+  justify-content: flex-end;
+}
 
-  @media (max-width: 600px) {
-    .start, .end {
-      justify-content: center;
-    }
+@media (max-width: 600px) {
+  .start,
+  .end {
+    justify-content: center;
   }
-  
-  @media screen and (max-width: 800px) {
-    .hideTextH, .hideTextG, .hideTextS, .hideTextP {
-      text-indent: 100%;
-      white-space: nowrap;
-      overflow: hidden;
-      background-repeat: no-repeat;
-      background-size: 25px 25px;
-      background-position: center;
-    }
-    .hideTextH {
-      background-image: url("/home.png");
-    }
-    .hideTextG {
-      background-image: url("/game.png");
-    }
-    .hideTextS {
-      background-image: url("/book.png");
-    }
-    .hideTextP {
-      background-image: url("/people.png");
-    }
-    .navButton {
-      height: 40px;
-      width: 50px;
-    }
-    .nav {
-      gap: 10px;
-    }
+}
+
+@media (max-width: 800px) {
+  .hideTextH,
+  .hideTextG,
+  .hideTextS,
+  .hideTextP {
+    text-indent: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: 25px 25px;
+    background-position: center;
   }
+  .hideTextH {
+    background-image: url("/home.png");
+  }
+  .hideTextG {
+    background-image: url("/game.png");
+  }
+  .hideTextS {
+    background-image: url("/book.png");
+  }
+  .hideTextP {
+    background-image: url("/people.png");
+  }
+  .navButton {
+    height: 40px;
+    width: 50px;
+  }
+  .nav {
+    gap: 10px;
+  }
+}
