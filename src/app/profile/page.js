@@ -80,31 +80,25 @@ export default async function Page() {
     );
   }
   return (
-    <div>
-      <div className={profileStyles.profile_wrapper}>
-        <div className={profileStyles.bio_wrapper_container}>
-          <div className={profileStyles.bio_wrapper_top}>
-            <div className={profileStyles.bio_edit}><EditBio id={userInfo.rows[0].id} /></div>
-            <div className={profileStyles.bio_title}>
-            Hello {userInfo.rows[0].username},</div>
+    <>
+      <div className=" w-full text-slate-800 flex flex-col items-center gap-2">
+        <p className="text-3xl m-4">
+          Hello {userInfo.rows[0].username}, Welcome to your profile!
+        </p>
+        <div className="bg-pink-300 border-stone-500 border-2 rounded w-1/2 flex ">
+          <Image
+            className="m-5 rounded-full shadow-black shadow-md"
+            src={user.externalAccounts[0].imageUrl}
+            height={200}
+            width={200}
+            alt="Your profile picture"
+          />
+          <div className="flex flex-col items-start bg-pink-300">
+            <p>What you told us about yourself: </p>
+            <p className="text-left">{userInfo.rows[0].bio}</p>
           </div>
-          <div>
-            <div className={profileStyles.bio_info}> Welcome to your profile!</div>
-          </div>
-          <div className={profileStyles.bio_wrapper_bottom}>
-            <div className={profileStyles.bio_img}>
-            <Image
-                className={profileStyles.para}
-                src={user.externalAccounts[0].imageUrl}
-                height={200}
-                width={200}
-                alt="Your profile picture"
-              />
-            </div>
-            <div className={profileStyles.bio_wrapper_left}>
-              <div className={profileStyles.bio_info3}>What you told us about yourself: </div>
-              <div className={profileStyles.bio_info4}>{userInfo.rows[0].bio}</div>
-            </div>
+          <div className="absolute">
+            <EditBio id={userInfo.rows[0].id} />
           </div>
         </div>
         <div className={profileStyles.review_wrap_container}>         

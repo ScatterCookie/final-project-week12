@@ -19,16 +19,22 @@ export default async function NewReview({ id }) {
   }
 
   return (
-    <form className="" action={handleSubmit}>
-      <p>Review:</p>
+    <form
+      className="rounded border-stone-500 border-2 bg-slate-400 w-1/2  flex flex-col"
+      action={handleSubmit}
+    >
+      <p>Write a review:</p>
       <input
-        className="p-2"
+        className="p-2 rounded border-stone-500 border-2 m-1"
         id="review_cont"
         name="review_cont"
         placeholder="Review"
       />
       <input type="hidden" name="game_id" value={id.id} />
-      <button className="p-2" type="submit">
+      <button
+        className="border-2 rounded bg-stone-500 border-stone-500 p-2 text-slate-800 hover:bg-red-400 m-1"
+        type="submit"
+      >
         Post!
       </button>
     </form>

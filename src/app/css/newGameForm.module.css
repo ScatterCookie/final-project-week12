@@ -1,57 +1,64 @@
 .wrapper {
-    display: flex;
-    flex-direction: row;
-    align-content: center;
-    justify-content: center;
-    margin-left: 20px;
-    margin-right: 20px;
-    width: 90%;
-    width: 90vw;
-    height: auto;
-    gap: 10px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  margin-left: 20px;
+  margin-right: 20px;
+  width: 90%;
+  width: 90vw;
+  height: auto;
+  gap: 10px;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    box-sizing: border-box;
-    height: 400px;
-    width: 300px;
-    margin: 15px;
-    margin-top: 0px;
-    border: 5px outset var(--border1-color);
-    border-radius: 5%;
-    align-items: center;
-    overflow: hidden;
-    background: var(--secBg-color);
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  height: 400px;
+  width: 300px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  color: rgb(100, 100, 100);
+  margin-left: 20px;
+  border: outset;
+  border-color: rgb(125, 125, 100);
+  border-radius: 5%;
+  align-items: center;
+  overflow: hidden;
+  background: rgb(250, 175, 225);
+  align-content: space-around;
 }
 
 .gamename {
-    width: 300px;
-    font-size: larger;
-    font-weight: 700;
-    height: 50px;
-    margin: 0;
-    align-content: center;
-}
-
-.gamename, .gameinfo, .gameDescription, .newgameinfo, .link, .subButton, .subButton, .container {
-    text-shadow: 1px 1px 3px rgb(125, 125, 100);
-    color: var(--main-color);
+  color: rgb(0, 0, 0);
+  width: 300px;
+  font-weight: 700;
+  height: 50px;
+  margin: 0;
+  align-content: center;
+  background: rgb(250, 175, 225);
 }
 
 .img {
-    width: 300px;
-    height: 150px;
+  width: 300px;
+  height: 150px;
+  border-top: #78716c solid 2px;
+  border-bottom: #78716c solid 2px;
 }
 
-.gameinfo  {
-    font-weight: 500;
-    width: 300px;
-    height: 150px;
-    overflow: hidden;
-    overflow-y: auto;
-    padding: 5px;
+.gameinfo,
+.gameDescription {
+  box-sizing: border-box;
+  font-weight: 500;
+  width: 300px;
+  height: 150px;
+  overflow: hidden;
+  scrollbar-width: thin;
+  overflow-y: auto;
+  padding: 5px;
+  background: rgb(250, 175, 225);
+  color: rgb(0, 0, 0);
 }
 
 .gameDescription {
@@ -65,35 +72,41 @@
 
 
 .newgameinfo {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding-left: 20px;
-    font-weight: 500;
-    width: 300px;
-    height: 35px;
-    overflow: hidden;
-    background-color: var(--border1-color);
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: 500;
+  width: 300px;
+  height: 35px;
+  overflow: hidden;
+  background: rgb(250, 175, 225);
+  color: rgb(0, 0, 0);
 }
 
-.link, .subButton {
-    padding: 5px;
-    width: 300px;
-    height: 50px; 
-    font-size: large;
-    font-weight: 700;
-    background-color: var(--border1-color);
-}
-
+.link,
 .subButton {
-    margin-bottom: 1px;
+  box-sizing: border-box;
+  padding: 5px;
+  width: 300px;
+  height: 50px;
+  font-weight: 800;
+  background: rgb(125, 125, 100);
+  color: #1e293b;
+  border-top: #78716c solid 2px;
 }
 
-.subButton:hover, .link:hover {
-    color: rgb(225, 235, 131);
+.subButton:hover,
+.link:hover {
+  background: tomato;
 }
-
-.subButton, .link, .gamename, .newgameinfo, .gameinfo, .gameDescription {
-    background: var(--secBg-color);
-    box-sizing: border-box;
+.subButton {
+  box-sizing: border-box;
+  padding: 5px;
+  width: 300px;
+  height: 50px;
+  border-top: #78716c solid 0px;
+  border-bottom: #78716c solid 2px;
+  background: rgb(125, 125, 100);
+  background-size: 300px 50px;
 }

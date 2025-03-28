@@ -1,6 +1,4 @@
 import Image from "next/image";
-import NavBar from "../components/NavBar";
-import NewReview from "../components/NewReview";
 import { db } from "../utils/db";
 import Link from "next/link";
 import NewGameForm from "../components/NewGameForm";
@@ -8,10 +6,10 @@ import newGameFormStyles from "../css/newGameForm.module.css";
 
 export default async function Page() {
   const games = await db.query("select * from games ORDER BY id");
-  console.log(games);
+
   return (
     <div className={newGameFormStyles.wrapper}>
-      <div className="flex flex-wrap">
+      <div className="flex flex-wrap ">
         <NewGameForm />
         {games.rows.map((game) => (
           <div className={newGameFormStyles.container} key={game.id}>
