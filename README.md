@@ -36,19 +36,13 @@ We used PG as a main package, we also tried to install numerous font styles but 
 HOW TO RUN THE APP:
  After cloning the repo, if you wish to run this, use npm run dev in your coding platform terminal and this will open http://localhost:3000. You will have to create your own .env file and SQL database to be able to interact with the code
 
-Lighthouse report: Mobile report: Performance : 91, Accessibility : 100, Best
-                                   Practices : 79, SEO : 100
-                                  Desktop report: Performance : 100, Accessibility : 96, Best Practices : 78, SEO : 100
-
 Reflections:
-
-Please mention the requirements you met and which goals you achieved for this assignment.
-
-🎯 Were there any requirements or goals that you were not quite able to achieve?
-
-🎯 If so, could you please tell us what was it that you found difficult about these tasks?
+ We Ran into very few roadblock when completing the functionality of the website. There was only one major roadblock and this was on the stretch goal we had set ourselves being the search bar function for games on the games page.
+ We ran into more roadblocks on the Styling side with creating the animations and running low on time as such we focused on the desktop view of the site as we thought most of the future trafic would be from desktop and not the modile view.
+ We had no issues with planning and deciding a project as we all came together and built something we were all interested in.
  
 What went really well and what could have gone better?
+The creation of the MVP without styling was smooth and ran into little errors along the way that wern't able to be solved with some colaborative coding. However when we did have issues a look on 
 Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
 Describing errors or bugs you encountered while completing your assignment.
 
