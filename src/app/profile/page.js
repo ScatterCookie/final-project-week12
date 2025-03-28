@@ -88,7 +88,7 @@ export default async function Page() {
   }
   return (
     <>
-      <div className="bg-blue-400 border-stone-500 border-2 rounded w-full text-slate-800 flex flex-col items-center gap-2">
+      <div className=" w-full text-slate-800 flex flex-col items-center gap-2">
         <p className="text-3xl m-4">
           Hello {userInfo.rows[0].username}, Welcome to your profile!
         </p>

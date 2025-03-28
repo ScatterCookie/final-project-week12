@@ -19,17 +19,22 @@ export default function NewGameForm() {
   }
   return (
     <div className={newGameFormStyles.container}>
-      <form action={handleNewGame}>
-        <label className={newGameFormStyles.newgameinfo} htmlFor="game_name">Game Title</label>
+      <form action={handleNewGame} className="">
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_name">
+          Game Title:
+        </label>
         <input
           id="game_name"
           name="game_name"
           type="text"
           placeholder="Game Title"
           required
+          className="w-full pl-2 border-stone-500 border-2"
         />
 
-        <label className={newGameFormStyles.newgameinfo} htmlFor="game_info">Game Description</label>
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_info">
+          Game Description:
+        </label>
         <input
           id="game_info"
           name="game_info"
@@ -37,18 +42,24 @@ export default function NewGameForm() {
           placeholder="Description of Game"
           height={500}
           required
+          className="w-full pl-2 border-stone-500 border-2"
         />
 
-        <label className={newGameFormStyles.newgameinfo} htmlFor="game_img">Game Poster</label>
+        <label className={newGameFormStyles.newgameinfo} htmlFor="game_img">
+          Game Poster:
+        </label>
         <input
           id="game_img"
           name="game_img"
           type="text"
           placeholder="Game Image URL"
           required
+          className="w-full pl-2 border-stone-500 border-2"
         />
 
-        <button className={newGameFormStyles.subButton} type="submit">Submit Game</button>
+        <button className={newGameFormStyles.subButton} type="submit">
+          Submit Game
+        </button>
       </form>
     </div>
   );
