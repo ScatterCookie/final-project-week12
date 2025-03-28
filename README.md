@@ -1,36 +1,56 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+Project name: CritPixel
+Vercel link: https://final-project-week12.vercel.app
+Repo link: https://github.com/ScatterCookie/final-project-week12
 
-## Getting Started
+If you wish to clone this yourself and have a play around or maybe improve on somethings, here's how:
 
-First, run the development server:
+Make a directory in your Ubuntu terminal where you would like this to be stored and input this as follows: 
 
-```bash
+git init
+git clone git@github.com:ScatterCookie/final-project-week12.git
+npm i
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Team members: Angus, Eddy, Liam and Hassan
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+Project description:
+A site which allows you to follow your latest games as well as being able to comment on those games, write stories and experiences about those games that are personal to you. If you find we don't have the game you're looking for, don't sweat, you can also add games to make it fit your style.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Problem domain: 
+CritPixel aims to provide a platform to share your stories through games and be able to share with others.
 
-## Learn More
+USER STORIES
+As a user I want to be able to login and be remembered.
+As a user I want to to add, edit and delete games.
+As a user I want to to comment on the games.
+As a user I want to have a dedicated profile page.
+As a user I want to  view all games when clicked, shows associated reviews and stories.
+As a user I want to be able to edit my own posts.
+As a user I want it to be visually appealing and intuitive
+As a user I want to be able to have my gamer tag as a user.
 
-To learn more about Next.js, take a look at the following resources:
+![Figma Wireframe](image.png)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+We used PG as a main package, we also tried to install numerous font styles but Vercel didn't like rendering those, so we removed them.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+HOW TO RUN THE APP:
+ After cloning the repo, if you wish to run this, use npm run dev in your coding platform terminal and this will open http://localhost:3000. You will have to create your own .env file and SQL database to be able to interact with the code
 
-## Deploy on Vercel
+Lighthouse report: Mobile report: Performance : 91, Accessibility : 100, Best
+                                   Practices : 79, SEO : 100
+                                  Desktop report: Performance : 100, Accessibility : 96, Best Practices : 78, SEO : 100
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Reflections:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Please mention the requirements you met and which goals you achieved for this assignment.
+
+🎯 Were there any requirements or goals that you were not quite able to achieve?
+
+🎯 If so, could you please tell us what was it that you found difficult about these tasks?
+ 
+What went really well and what could have gone better?
+Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
+Describing errors or bugs you encountered while completing your assignment.
+
+References:
+Third-party APIs, CSS resets, icons, images... 
