@@ -5,8 +5,10 @@ export default function DeleteReviewButton({id}) {
 
 
     return (
-        <button onClick={() => {
-            handleDeleteReview(id)
-        }}>Remove Review</button>
+        <>
+            <button onClick={() => {
+                handleDeleteReview(id)
+            }}>Remove Review</button>
+        </>
     )
 }

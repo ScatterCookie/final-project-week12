@@ -17,26 +17,27 @@
     box-sizing: border-box;
     height: 400px;
     width: 300px;
-    margin-top: 10px;
-    margin-bottom: 10px;
-    color: rgb(100, 100, 100);
-    margin-left: 20px;
-    border: outset;
-    border-color: rgb(125, 125, 100);
+    margin: 15px;
+    margin-top: 0px;
+    border: 5px outset var(--border1-color);
     border-radius: 5%;
     align-items: center;
     overflow: hidden;
+    background: var(--secBg-color);
 }
 
 .gamename {
-    color: rgb(0, 0, 0);
     width: 300px;
+    font-size: larger;
     font-weight: 700;
     height: 50px;
     margin: 0;
     align-content: center;
-    background: rgb(250, 175, 225);
+}
+
+.gamename, .gameinfo, .gameDescription, .newgameinfo, .link, .subButton, .subButton, .container {
     text-shadow: 1px 1px 3px rgb(125, 125, 100);
+    color: var(--main-color);
 }
 
 .img {
@@ -44,19 +45,24 @@
     height: 150px;
 }
 
-.gameinfo, .gameDescription {
-    box-sizing: border-box;
+.gameinfo  {
     font-weight: 500;
     width: 300px;
     height: 150px;
     overflow: hidden;
-    scrollbar-width: thin;
     overflow-y: auto;
     padding: 5px;
-    background: rgb(250, 175, 225);
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 3px rgb(125, 125, 100);
 }
+
+.gameDescription {
+    font-weight: 500;
+    width: 300px;
+    height: 300px;
+    overflow: hidden;
+    overflow-y: auto;
+    padding: 5px;
+}
+
 
 .newgameinfo {
     display: flex;
@@ -67,34 +73,27 @@
     width: 300px;
     height: 35px;
     overflow: hidden;
-    background: rgb(250, 175, 225);
-    color: rgb(0, 0, 0);
-    text-shadow: 1px 1px 3px rgb(125, 125, 100);
-
+    background-color: var(--border1-color);
 }
 
 .link, .subButton {
-    box-sizing: border-box;
     padding: 5px;
     width: 300px;
     height: 50px; 
-    font-weight: 800;
-    background: rgb(250, 175, 225);
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
+    font-size: large;
+    font-weight: 700;
+    background-color: var(--border1-color);
+}
+
+.subButton {
+    margin-bottom: 1px;
 }
 
 .subButton:hover, .link:hover {
     color: rgb(225, 235, 131);
 }
 
-.subButton {
+.subButton, .link, .gamename, .newgameinfo, .gameinfo, .gameDescription {
+    background: var(--secBg-color);
     box-sizing: border-box;
-    padding: 5px;
-    width: 300px;
-    height: 50px; 
-
-    background-color: rgb(250, 175, 225);
-    background-size: 300px 50px;
-    text-shadow: 1px 1px 3px rgb(0, 0, 0);
-
 }

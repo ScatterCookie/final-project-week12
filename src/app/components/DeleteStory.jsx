@@ -6,8 +6,10 @@ export default function DeleteStoryButton({id}) {
 
 
     return (
-        <button className={profileStyles.remove} onClick={() => {
-            handleDeleteStory(id)
-        }}>Remove Story</button>
+        <>
+            <button className={profileStyles.remove} onClick={() => {
+                handleDeleteStory(id)
+            }}>Remove Story</button>
+        </>
     )
 }

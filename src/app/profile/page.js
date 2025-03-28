@@ -50,17 +50,15 @@ export default async function Page() {
       story.game_id,
     ]);
     return (
-      <div
-        key={story.clerk_id}
-        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
-      >
-        <h2>{story.story_title}</h2>
-        <p>{story.story_cont}</p>
-        <p>
+      <div className={profileStyles.review_game_wrap}
+        key={story.clerk_id}>
+        <div className={profileStyles.review_game}>{story.story_title}</div>
+        <div className={profileStyles.review_cont}>{story.story_cont}</div>
+        <div className={profileStyles.review_del}>
           A&nbsp;
           <Link href={`/games/${story.game_id}`}>{game.rows[0].game_name}</Link>
           &nbsp;Story
-        </p>
+        </div>
         <DeleteStoryButton id={clerkId} />
         <br />
       </div>
@@ -72,51 +70,54 @@ export default async function Page() {
       review.game_id,
     ]);
     return (
-      <div
-        key={review.id}
-        className="border-stone-500 bg-slate-400 border-2 rounded w-1/2 m-2"
-      >
-        <p>
-          <Link href={`/games/${review.game_id}`}>
-            {game.rows[0].game_name}
-          </Link>
-        </p>
-        <h2>{review.review_cont}</h2>
-        <DeleteReviewButton id={clerkId} />
+      <div className={profileStyles.review_game_wrap} key={review.id}>
+        <div className={profileStyles.review_game}><Link href={`/games/${review.game_id}`}>
+          {game.rows[0].game_name}
+        </Link></div>
+        <div className={profileStyles.review_cont}>{review.review_cont}</div>
+        <div className={profileStyles.review_del}><DeleteReviewButton id={clerkId} /></div>
       </div>
     );
   }
   return (
-    <>
-      <div className="bg-blue-400 border-stone-500 border-2 rounded w-full text-slate-800 flex flex-col items-center gap-2">
-        <p className="text-3xl m-4">
-          Hello {userInfo.rows[0].username}, Welcome to your profile!
-        </p>
-        <div className="bg-pink-300 border-stone-500 border-2 rounded w-1/2 flex ">
-          <Image
-            className="m-5 rounded-full shadow-black shadow-md"
-            src={user.externalAccounts[0].imageUrl}
-            height={200}
-            width={200}
-            alt="Your profile picture"
-          />
-          <div className="flex flex-col items-start bg-pink-300">
-            <p>What you told us about yourself: </p>
-            <p className="text-left">{userInfo.rows[0].bio}</p>
+    <div>
+      <div className={profileStyles.profile_wrapper}>
+        <div className={profileStyles.bio_wrapper_container}>
+          <div className={profileStyles.bio_wrapper_top}>
+            <div className={profileStyles.bio_edit}><EditBio id={userInfo.rows[0].id} /></div>
+            <div className={profileStyles.bio_title}>
+            Hello {userInfo.rows[0].username},</div>
           </div>
-          <div className={profileStyles.editBio}>
-            <EditBio id={userInfo.rows[0].id} />
+          <div>
+            <div className={profileStyles.bio_info}> Welcome to your profile!</div>
+          </div>
+          <div className={profileStyles.bio_wrapper_bottom}>
+            <div className={profileStyles.bio_img}>
+            <Image
+                className={profileStyles.para}
+                src={user.externalAccounts[0].imageUrl}
+                height={200}
+                width={200}
+                alt="Your profile picture"
+              />
+            </div>
+            <div className={profileStyles.bio_wrapper_left}>
+              <div className={profileStyles.bio_info3}>What you told us about yourself: </div>
+              <div className={profileStyles.bio_info4}>{userInfo.rows[0].bio}</div>
+            </div>
           </div>
         </div>
-        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
-          <h1 className="p-2">Reviews from {userInfo.rows[0].username}: </h1>
-          {reviews.map(renderReview)}
-        </div>
-        <div className="border-stone-500 border-2 rounded w-1/2 items-center flex flex-col bg-pink-300">
-          <h1>Stories from {userInfo.rows[0].username}: </h1>
-          {stories.rows.map(renderStory)}
-        </div>
+        <div className={profileStyles.review_wrap_container}>         
+          <div className={profileStyles.review_wrap}>
+            <div className={profileStyles.review_text}>Reviews from {userInfo.rows[0].username}. </div>
+            <div className={profileStyles.review_name}>{reviews.map(renderReview)}</div>
+          </div>
+          <div className={profileStyles.stories_wrap}>
+            <div className={profileStyles.stories_text}>Stories from {userInfo.rows[0].username}. </div>
+            <div className={profileStyles.stories_name}>{stories.rows.map(renderStory)}</div>
+          </div>
+        </div> 
       </div>
-    </>
+    </div>
   );
 }

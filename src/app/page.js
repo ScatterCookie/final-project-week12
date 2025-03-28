@@ -14,8 +14,8 @@ export default async function Home() {
   const users = await db.query(`SELECT * FROM user_info`);
 
   return (
-    <div>
-      <p className={mainStyles.para}>Welcome To the Week 12 Project.</p>
+    <div className={mainStyles.mainwrapper}>
+      <p className={mainStyles.greet}>Welcome To the Week 12 Project.</p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>

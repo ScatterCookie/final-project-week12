@@ -70,8 +70,8 @@
     margin: 10px;
     height: 80px;
     border: outset;
-    border-color: rgb(75, 0, 0);
-    background-color: rgb(125, 0, 0);
+    border-color: var(--secBg2-color);
+    background-color: var(--secBg2-color);
   }
   
 
@@ -93,7 +93,7 @@
     }
   }
   
-  @media screen and (max-width: 800px) {
+  @media (max-width: 800px) {
     .hideTextH, .hideTextG, .hideTextS, .hideTextP {
       text-indent: 100%;
       white-space: nowrap;

@@ -27,16 +27,17 @@ export default function NewGameForm() {
           type="text"
           placeholder="Game Title"
           required
+          height={100}
         />
 
         <label className={newGameFormStyles.newgameinfo} htmlFor="game_info">Game Description</label>
-        <input
+        <textarea
           id="game_info"
           name="game_info"
           type="text"
           placeholder="Description of Game"
-          height={500}
           required
+          style={{ resize: "none", height: "170px" }}
         />
 
         <label className={newGameFormStyles.newgameinfo} htmlFor="game_img">Game Poster</label>
