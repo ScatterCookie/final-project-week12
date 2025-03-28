@@ -42,9 +42,7 @@ Reflections:
  We had no issues with planning and deciding a project as we all came together and built something we were all interested in.
  
 What went really well and what could have gone better?
-The creation of the MVP without styling was smooth and ran into little errors along the way that wern't able to be solved with some colaborative coding. However when we did have issues a look on 
-Detailing useful external sources that helped you complete the assignment (e.g Youtube tutorials).
-Describing errors or bugs you encountered while completing your assignment.
+The creation of the MVP without styling was smooth and ran into little errors along the way that wern't able to be solved with some colaborative coding.
 
 References:
-Third-party APIs, CSS resets, icons, images... 
+We used the Youtube API and a couple youtube videos for one of the stretch goals being the search bar which was not implemented in time for the final submition.
