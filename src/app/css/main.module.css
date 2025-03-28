@@ -2,6 +2,9 @@
 .mainwrapper {
   border: 5px outset var(--border1-color);
   background-color: var(--secBg-color);
+  border-radius: 5%;
+  overflow: hidden;
+
 }
 
 .main {
@@ -35,13 +38,14 @@
 .para, .greet{
   color: var(--main-color);
   background-color: var(--secBg-color);
-  font-weight: 600;
+  font-weight: 700;
   
 }
 
 .greet {
-  font-size: larger;
-  font-weight: 700;
+  height: 60px;
+  font-size: 50px;
+  font-weight: 800;
 }
 .container, .number, .box {
   background-color: black; 
@@ -66,7 +70,6 @@
   animation-timing-function: linear;
   align-content: center;
 }
-
 
 @keyframes move {
   to {

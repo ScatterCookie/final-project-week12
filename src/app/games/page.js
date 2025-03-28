@@ -26,9 +26,9 @@ export default async function Page() {
             <p className={newGameFormStyles.gameinfo}>
               {`${game.game_info.substring(0, 80)}...`}
             </p>
-            <Link className={newGameFormStyles.link} href={`/games/${game.id}`}>
+            <div className={newGameFormStyles.link}><Link href={`/games/${game.id}`}>
               Read more
-            </Link>
+            </Link></div>
           </div>
         ))}
       </div>

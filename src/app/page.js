@@ -15,7 +15,7 @@ export default async function Home() {
 
   return (
     <div className={mainStyles.mainwrapper}>
-      <p className={mainStyles.greet}>Welcome To the Week 12 Project.</p>
+      <p className={mainStyles.greet}>CritPixel</p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>
