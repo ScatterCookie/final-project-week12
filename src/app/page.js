@@ -15,7 +15,9 @@ export default async function Home() {
 
   return (
     <div>
-      <p className={mainStyles.para}>Welcome To the Week 12 Project.</p>
+      <p className="text-6xl rounded border-stone-500 border-2 bg-pink-300">
+        CritPixel
+      </p>
       <div className="">
         <div className={mainStyles.container}>
           <div className={`${mainStyles.box} ${mainStyles.item1}`}>
