@@ -19,23 +19,29 @@ export default async function NewStory({ id }) {
   }
 
   return (
-    <form className="" action={handleSubmit}>
-      <p>Story Title:</p>
+    <form
+      className="rounded border-stone-500 border-2 bg-slate-400 w-1/2 flex flex-col"
+      action={handleSubmit}
+    >
+      <p className="">Story Title:</p>
       <input
-        className="p-2"
+        className="p-2 rounded border-stone-500 border-2 m-1"
         id="story_title"
         name="story_title"
         placeholder="Title"
       />
       <p>Story Content:</p>
       <input
-        className="p-2"
+        className="p-2 rounded border-stone-500 border-2 m-1"
         id="story_cont"
         name="story_cont"
         placeholder="Tell us your story!"
       />
       <input type="hidden" name="game_id" value={id.id} />
-      <button className="p-2" type="submit">
+      <button
+        className="border-2 rounded bg-stone-500 border-stone-500 p-1 text-slate-800 hover:bg-red-400 m-1 pb-2"
+        type="submit"
+      >
         Post!
       </button>
     </form>

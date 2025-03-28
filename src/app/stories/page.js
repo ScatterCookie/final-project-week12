@@ -17,7 +17,7 @@ export default async function Page() {
     return (
       <div
         key={story.id}
-        className="bg-pink-300 border-stone-500 border-2 rounded w-1/2"
+        className="bg-pink-300 border-stone-500 border-2 rounded w-full"
       >
         <p>
           This story is from:
@@ -26,8 +26,8 @@ export default async function Page() {
             {game.rows[0].game_name}
           </Link>
         </p>
-        <h2>{story.story_title}</h2>
-        <p>{story.story_cont}</p>
+        <h2 className="text-2xl">{story.story_title}</h2>
+        <p className="p-2 pt-0">{story.story_cont}</p>
         <div className="">
           {story.clerk_id == user.id ? <EditStory id={`${story.id}`} /> : ""}
         </div>
@@ -36,7 +36,7 @@ export default async function Page() {
   }
 
   return (
-    <div className="bg-blue-400 border-stone-500 border-2 rounded w-full text-slate-800">
+    <div className="">
       <h1 className="text-3xl p-4">Stories Page</h1>
       <div className="flex flex-col items-center gap-2">
         {stories.rows.map(renderStory)}
