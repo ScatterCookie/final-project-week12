@@ -46,3 +46,6 @@ The creation of the MVP without styling was smooth and ran into little errors al
 
 References:
 We used the Youtube API and a couple youtube videos for one of the stretch goals being the search bar which was not implemented in time for the final submition.
+
+YouTube API: https://developers.google.com/youtube/v3
+YouTube Video: https://www.youtube.com/watch?v=QoMHwks6hUA
